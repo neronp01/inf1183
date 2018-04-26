@@ -1,0 +1,163 @@
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin transform($scales, $Xtranslate, $Ytranslate){
+  -webkit-transform:  scale($scales) translate($Xtranslate, $Ytranslate);
+  -moz-transform: scale($scales) translate($Xtranslate, $Ytranslate);
+  -ms-transform:   scale($scales) translate($Xtranslate, $Ytranslate);
+  -o-transform:   scale($scales) translate($Xtranslate, $Ytranslate);
+  transform:  scale($scales) translate($Xtranslate, $Ytranslate);
+}
+@mixin transform2($scales){
+  -webkit-transform:  scale($scales);
+  -moz-transform: scale($scales) ;
+  -ms-transform:   scale($scales);
+  -o-transform:   scale($scales);
+  transform:  scale($scales);
+}
+
+.wrapper{
+  @include flexbox();
+}
+
+
+.damepique_image{
+  // @include  transform(.4,800px,-1900px);
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 2s;
+}
+
+@-webkit-keyframes example {
+  from {@include  transform(.35,500px,-1900px);}
+  to {@include  transform(.4,800px,-1900px)}
+}
+
+/* Standard syntax */
+@keyframes example {
+  0%{@include  transform(.35,500px,-1900px); }
+ 100%{@include  transform(.4,800px,-1900px); }
+}
+.robot{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tete{
+  @include flex(1);
+  height: 316px;
+  width: 316px;
+  @include transform(1, -70px, 0px);
+margin-bottom: 20px;
+}
+.tete_image{
+  height: 316px;
+  width: 316px;
+}
+.teteAnime{
+  @include transform(1, -70px, 0px);
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
+  -webkit-animation-name: top_tete; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: top_tete;
+    animation-duration: 2s;
+}
+@keyframes top_tete {
+  0%{@include  transform(1,-70px,0px); }
+  25%{@include  transform(1,10px,0px); }
+  75%{@include  transform(1,-140px,0px); }
+ 100%{@include  transform(1,-70px,0px); }
+}
+.teteAnimeBig{
+  @include transform(1, -70px, 0px);
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
+  -webkit-animation-name: big_tete; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: big_tete;
+    animation-duration: 2s;
+}
+
+@keyframes big_tete {
+  0%{@include  transform(1,-70px,0px); }
+  25%{@include  transform(.7,-70px,0px); }
+  75%{@include  transform(1.1,-70px,0px); }
+ 100%{@include  transform(1,-70px,0px); }
+}
+.container{
+  width: 600px;
+  @include transform(1, 70px, 0px);
+
+}
+.corp{
+  width: 400px;
+  height: 400px;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.item1, .item2, .item3 {
+  @include flex(1);
+}
+#item1{
+  @include transform(1, 40px, -30px);
+}
+#item3{
+  @include transform(1, -40px, -30px);
+}
+#braGauche{
+  @include flex(1);
+  order: 1;
+  height: 125px;
+  width: 125px;
+
+
+}
+#corp{
+  order: 2;
+
+  height: 400px;
+  width: 300px;
+  @include flex(1);
+
+}
+#braDroite{
+  order: 3;
+
+  height: 125px;
+  width: 125px;
+  @include flex(1);
+
+}
+.cartes1{
+  position: absolute;
+  top: 465px;
+  left: 185px
+}
+.carte{
+  height: 80px;
+  width: 80px;
+}
+.video{
+  z-index: -100;
+  position: relative;
+  top:-240px;
+  left:176px
+}

@@ -1,0 +1,94 @@
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin transform($scales, $Xtranslate, $Ytranslate){
+  -webkit-transform:  scale($scales) translate($Xtranslate, $Ytranslate);
+  -moz-transform: scale($scales) translate($Xtranslate, $Ytranslate);
+  -ms-transform:   scale($scales) translate($Xtranslate, $Ytranslate);
+  -o-transform:   scale($scales) translate($Xtranslate, $Ytranslate);
+  transform:  scale($scales) translate($Xtranslate, $Ytranslate);
+}
+
+.wrapper{
+  @include flexbox();
+}
+.form-container {
+  flex-flow: column;
+  align-items: center;
+
+}
+.card{
+  margin-top: 100px;
+  @include  flex(1);
+  height: 600px;
+  width: 600px;
+}
+.item1 {
+  @include  flex(1);
+  height: 70px;
+  width: 400px;
+
+
+}
+.item2, .item3, .item4 {
+  margin: 10px;
+  @include  flex(.3);
+  width: 400px;
+}
+#lock {
+
+    margin: 1.5em auto 1em auto;
+    display:block;
+    max-width:200px;
+    max-height:200px
+}
+
+#fb {
+   background:#3B5998 url("/assets/images/fb.png") no-repeat 2px 6px;
+    background-size: 47px;
+    color:#fff;
+}
+
+#google {
+    border: 1px solid #95989A;
+    background: #fff  url("/assets/images/google.png") no-repeat 15px;
+    background-size: 35px;
+}
+
+#email {
+    background: #ECECEC  url("/assets/images/email.png") no-repeat 15px;
+    background-size: 50px;
+}
+
+@media (max-width: 600px) {
+    #page {
+        padding:1em;
+    }
+    #toolbar {
+        width:90%;
+        margin-left: -45%;
+    }
+    #fb {
+        background:#3B5998;
+    }
+
+    #google {
+        background: #fff;
+    }
+
+    #email {
+        background: #ECECEC;
+    }
+}

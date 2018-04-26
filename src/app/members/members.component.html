@@ -1,0 +1,19 @@
+
+    <mat-toolbar class="mat-tollbar_membres">
+        <span class="example-spacer"></span>
+        <div id="page">
+            <h2 style="color:#ffffff">Bonjour &nbsp;{{displayName}}!</h2>
+          </div>
+    <button mat-button color="none" (click)="logout()" class="basic-btn2">Quitter</button>
+          <button mat-mini-fab class="menuButton" mat-icon-button [matMenuTriggerFor]="menu">
+              <i class="material-icons iconeMenuSmall">menu</i>
+            </button>
+            <mat-menu  #menu="matMenu" class="matMenuBackGroung" >
+                <button routerLink="./DameDePique" routerLinkActive="active" mat-menu-item class="matMenu" >Accueil</button>
+              </mat-menu>
+</mat-toolbar>
+
+<div  class="damepique">
+   <!-- <img id="Dame" src="assets/images/main.png" class="cours" height="800" width="800" id="main"/>-->
+    <img class="damepique_image" src="assets/images/DameDePique.png" />
+  </div>

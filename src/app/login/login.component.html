@@ -1,0 +1,16 @@
+<div *ngIf="afAuth.authState | async as user; else showLogin">
+<div class="form-container wrapper">
+  <mat-card class="card form-container wrapper">
+  <div class="item1">
+  <img  src="assets/images/lock.png" id="lock">
+</div>
+    <!-- <span class="error" *ngIf="error">{{ error }}</span> -->
+
+  <button mat-button class="item2"  (click)="login()" id="fb">Connectez-vous avec Facebook</button>
+  <button mat-button class="item3" (click)="login()" id="google">Connectez-vous avec Google</button>
+  <button mat-button class="item4" routerLink="/login-email" id="email">Email</button>
+
+
+</mat-card>
+</div>
+

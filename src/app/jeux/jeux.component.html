@@ -1,0 +1,31 @@
+<div class="container">
+<div class='robot wrapper'>
+    <div class="tete" [ngClass]="{'teteAnime':top_tete ,'teteAnimeBig':big_tete}">
+  <img class="tete_image" src="/assets/images/tete1.png"/>
+  <div class="video">
+  <app-expression [pathVideo]='robotUnVideo'></app-expression>
+</div>
+    </div>
+    <div class="corp wrapper">
+      <div id="item1">
+          <img id="braGauche"   src="/assets/images/braGauche.png"/>
+      </div>
+      <div id="item2">
+          <img id="corp"   src="/assets/images/corps.png"/>
+           <div class="cartes1" *ngIf="carte === 1">
+              <img class="carte" src="/assets/cartes/sixCarreau.png"/>
+          </div>
+          <div class="cartes1" *ngIf="carte === 2">
+              <img class="carte" src="/assets/cartes/dameCarreau.png"/>
+          </div>
+          <div class="cartes1" *ngIf="carte === 3">
+              <img class="carte" src="/assets/cartes/dixPique.png "/>
+          </div>
+      </div>
+      <div id="item3">
+  <img id="braDroite"  src="/assets/images/braDroite.png"/>
+    </div>
+</div>
+  <!-- <app-cadran  [effPaths]="effPathJoueurTrois" [pointFin]='point'></app-cadran> -->
+  </div>
+</div>

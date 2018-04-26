@@ -1,0 +1,72 @@
+<mat-toolbar class="mat-tollbar_membres">
+    <span class="example-spacer"></span>
+    <div id="page">
+        <h2 style="color:#ffffff">Bonjour &nbsp;{{displayName}}!</h2>
+      </div>
+<button mat-button color="none" (click)="logout()" class="basic-btn2">Quitter</button>
+      <button mat-mini-fab class="menuButton" mat-icon-button [matMenuTriggerFor]="menu">
+          <i class="material-icons iconeMenuSmall">menu</i>
+        </button>
+        <mat-menu  #menu="matMenu" class="matMenuBackGroung" >
+            <button routerLink="./DameDePique" routerLinkActive="active" mat-menu-item class="matMenu" >Accueil</button>
+          </mat-menu>
+</mat-toolbar>
+
+<div class="robots wrapper">
+
+
+<div class="robot1">
+<app-jeux [robotUnVideo]="robotUnVideo" [carte] = "1"></app-jeux>
+</div>
+<div class="robot2">
+<app-jeux [robotUnVideo]="robotDeuxVideo" [carte] = "2" ></app-jeux>
+</div>
+<div class="robot3">
+<app-jeux [robotUnVideo]="robotTroisVideo" [carte] = "3"></app-jeux>
+</div>
+
+
+</div>
+<div class="table_container wrapper">
+<div class="table">
+    <div class="cartes11" *ngIf="carteTable" >
+        <img class="carte" src="/assets/cartes/asCoeur.png"/>
+    </div>
+</div>
+</div>
+<div class="carteswrapper wrapper">
+<div class="cartes wrapper">
+    <div class="cartes1" *ngIf="!carteTable" (click)="clickCard()">
+        <img class="carte" src="/assets/cartes/asCoeur.png"/>
+    </div>
+    <div class="cartes2">
+        <img class="carte" src="/assets/cartes/cinqTrefle.png"/>
+    </div>
+    <div class="cartes3">
+        <img class="carte" src="/assets/cartes/huitCarreau.png"/>
+    </div>
+    <div class="cartes4">
+        <img class="carte" src="/assets/cartes/quatreTrefle.png"/>
+    </div>
+    <div class="cartes5">
+        <img class="carte" src="/assets/cartes/valetCoeur.png"/>
+    </div>
+    <div class="cartes6">
+        <img class="carte" src="/assets/cartes/dameTrefle.png"/>
+    </div>
+    <div class="cartes7">
+        <img class="carte" src="/assets/cartes/roiPique.png"/>
+    </div>
+    <div class="cartes8">
+        <img class="carte" src="/assets/cartes/sixTrefle.png"/>
+    </div>
+    <div class="cartes9">
+        <img class="carte" src="/assets/cartes/neufCoeur.png"/>
+    </div>
+    <div class="cartes10">
+        <img class="carte" src="/assets/cartes/troisPique.png"/>
+    </div>
+</div>
+</div>
+
+
